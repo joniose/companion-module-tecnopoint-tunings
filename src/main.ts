@@ -242,19 +242,9 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	}
 
 	private requestAlternationStatus(cell: string): void {
-		this.pendingCellQuery = cell
-		this.pendingQueryLines = []
-		this.pendingStatusMatrix = undefined
-		this.setVariableValues({ last_cell: cell, cell_status: '' })
-		if (this.pendingQueryTimeout) clearTimeout(this.pendingQueryTimeout)
-		void this.sendCommand('GET_STA')
-		this.pendingQueryTimeout = setTimeout(() => {
-			const received = this.pendingQueryLines.join(' | ') || this.receiveBuffer || '<no delimited response>'
-			this.pendingCellQuery = ''
-			this.pendingQueryLines = []
-			this.pendingStatusMatrix = undefined
-			this.log('warn', `Timed out waiting for GET_STA response while monitoring ${cell}; received: ${received}`)
-		}, Math.max(3000, Number(this.config.connectTimeout) || 5000))
+		// Use the same cell-specific query as the manual status action. sendCommand()
+		// also initializes the response parser and timeout for CSTAT.
+		void this.sendCommand(`CSTAT [${cell}]`)
 	}
 
 	private async startAlternationCell(): Promise<void> {
