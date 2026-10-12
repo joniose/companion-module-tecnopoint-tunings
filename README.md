@@ -4,9 +4,11 @@ Control a Tecnopoint Tuning Ceiling Dolly through the TuningS software TCP/IP se
 
 ## Setup
 
-1. Enable the TCP/IP server in TuningS under **Group Server Setup**.
-2. Set the TuningS computer's IP address and TCP port in this module. The manual's example uses port `22222`.
-3. Select the line ending expected by the TuningS server. CR/LF is the default; change it if your setup expects another terminator.
+1. Configure TuningS as described in the [German TuningS setup guide](docs/TUNINGS-SETUP.de.md), including the TCP/IP server, status reply, and any global or group commands you plan to use.
+2. In Companion, enter the TuningS computer's reachable IP address and the same TCP port (the manual's example uses `22222`).
+3. Keep **Command terminator** at **CR + LF** unless your TuningS setup requires a different terminator.
+
+The guide links to the relevant figures in the [TuningS TCP command manual](docs/TCP%20Commands.pdf#page=58).
 
 ## Actions
 
