@@ -2,9 +2,13 @@
 
 This module connects to the TCP/IP server in the Tecnopoint TuningS software to control sequences and groups for a Tuning Ceiling Dolly.
 
-## Connection
+## Connection and TuningS setup
 
-Enable the TCP/IP server in TuningS under **Group Server Setup**, then enter the computer's IP address and configured TCP port here. The command manual's example uses port `22222`. Select the terminator expected by that server; CR/LF is the default.
+In TuningS, enable the TCP/IP server in **Group Server Setup** and configure **Global Status reply** as `GET_STA`. This is needed for the status replies used by the cell status action and automatic alternation. Enable any other global or group commands that you plan to use.
+
+Then enter the TuningS computer's reachable IP address and the same TCP port here. The manual's example uses `22222`. Keep **Command terminator** at **CR + LF** unless TuningS is configured differently.
+
+See the [step-by-step TuningS setup guide](../docs/TUNINGS-SETUP.de.md) and the [manual figure for Group Server Setup (PDF, p. 58)](../docs/TCP%20Commands.pdf#page=58).
 
 ## Commands
 
