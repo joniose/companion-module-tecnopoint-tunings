@@ -28,10 +28,10 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 				},
 			],
 			callback: (feedback) => {
-				return (
-					String(self.getVariableValue('last_cell') ?? '').toUpperCase() === String(feedback.options.cell).trim().toUpperCase() &&
-					String(self.getVariableValue('cell_status') ?? '') === String(feedback.options.status)
-				)
+				const lastCell = String(self.getVariableValue('last_cell') ?? '').toUpperCase()
+				const cell = String(feedback.options.cell).trim().toUpperCase()
+				const status = String(self.getVariableValue('cell_status') ?? '')
+				return lastCell === cell && status === String(feedback.options.status)
 			},
 		},
 		alternation_active: {
