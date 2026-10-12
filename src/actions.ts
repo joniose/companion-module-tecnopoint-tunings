@@ -14,7 +14,10 @@ export function UpdateActions(self: ModuleInstance): void {
 			name: 'Sequence: Start / Stop / Cut / Status',
 			options: [
 				{
-					id: 'command', type: 'dropdown', label: 'Command', default: 'START',
+					id: 'command',
+					type: 'dropdown',
+					label: 'Command',
+					default: 'START',
 					choices: [
 						{ id: 'START', label: 'Start sequence' },
 						{ id: 'STOP', label: 'Stop sequence' },
@@ -38,7 +41,10 @@ export function UpdateActions(self: ModuleInstance): void {
 			name: 'Group: Start / Stop / Cut',
 			options: [
 				{
-					id: 'command', type: 'dropdown', label: 'Command', default: 'CUT',
+					id: 'command',
+					type: 'dropdown',
+					label: 'Command',
+					default: 'CUT',
 					choices: [
 						{ id: 'START', label: 'Start group' },
 						{ id: 'STOP', label: 'Stop group' },
@@ -56,7 +62,10 @@ export function UpdateActions(self: ModuleInstance): void {
 			name: 'Global command',
 			options: [
 				{
-					id: 'command', type: 'dropdown', label: 'Command', default: 'GLOBSTART',
+					id: 'command',
+					type: 'dropdown',
+					label: 'Command',
+					default: 'GLOBSTART',
 					choices: [
 						{ id: 'GLOBSTART', label: 'Start selected group' },
 						{ id: 'GLOBSTOP', label: 'Stop selected group' },
@@ -95,7 +104,10 @@ export function UpdateActions(self: ModuleInstance): void {
 				self.toggleAlternation({
 					cellA: String(event.options.cellA).trim().toUpperCase(),
 					cellB: String(event.options.cellB).trim().toUpperCase(),
-					firstCell: String(event.options.firstCell).toUpperCase() === 'Y' ? String(event.options.cellB).trim().toUpperCase() : String(event.options.cellA).trim().toUpperCase(),
+					firstCell:
+						String(event.options.firstCell).toUpperCase() === 'Y'
+							? String(event.options.cellB).trim().toUpperCase()
+							: String(event.options.cellA).trim().toUpperCase(),
 					pollInterval: Number(event.options.pollInterval) || 1000,
 				})
 			},
