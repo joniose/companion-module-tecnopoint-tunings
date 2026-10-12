@@ -22,7 +22,8 @@ export function UpdatePresets(self: ModuleInstance): void {
 	const groupPresets = ['START', 'STOP', 'CUT'] as const
 	for (const command of groupPresets) {
 		presets[`group_${command.toLowerCase()}`] = {
-			type: 'simple', name: `${command} group 1`,
+			type: 'simple',
+			name: `${command} group 1`,
 			style: { text: `${command}\nGRP1`, size: 'auto', color: 0xffffff, bgcolor: command === 'START' ? 0x207020 : command === 'STOP' ? 0x992222 : 0xbb6600, show_topbar: true },
 			steps: [
 				{
