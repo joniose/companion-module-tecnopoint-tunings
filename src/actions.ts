@@ -92,7 +92,10 @@ export function UpdateActions(self: ModuleInstance): void {
 				{ id: 'cellA', type: 'textinput', label: 'Preset cell X', default: 'A1' },
 				{ id: 'cellB', type: 'textinput', label: 'Preset cell Y', default: 'B1' },
 				{
-					id: 'firstCell', type: 'dropdown', label: 'Cell to start when enabling', default: 'X',
+					id: 'firstCell',
+					type: 'dropdown',
+					label: 'Cell to start when enabling',
+					default: 'X',
 					choices: [
 						{ id: 'X', label: 'Preset cell X' },
 						{ id: 'Y', label: 'Preset cell Y' },
