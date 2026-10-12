@@ -85,7 +85,7 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 			this.log('info', `Connected to TuningS at ${this.config.host}:${this.config.port || 22222}`)
 			if (this.alternation) {
 				void this.startAlternationCell()
-				this.scheduleAlternationPoll(0)
+				this.scheduleAlternationPoll(this.alternation.pollInterval)
 			}
 		})
 		socket.on('data', (data) => this.onData(data))
@@ -206,7 +206,8 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 		this.setVariableValues({ alternation_status: `On - ${firstCell}` })
 		this.checkFeedbacks('alternation_active')
 		void this.startAlternationCell()
-		this.scheduleAlternationPoll(0)
+		// Let TuningS return the START acknowledgement before asking for cell status.
+		this.scheduleAlternationPoll(pollInterval)
 		this.log('info', `Automatic alternation enabled: ${cellA} ↔ ${cellB}, polling every ${pollInterval} ms`)
 	}
 
@@ -242,19 +243,9 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	}
 
 	private requestAlternationStatus(cell: string): void {
-		this.pendingCellQuery = cell
-		this.pendingQueryLines = []
-		this.pendingStatusMatrix = undefined
-		this.setVariableValues({ last_cell: cell, cell_status: '' })
-		if (this.pendingQueryTimeout) clearTimeout(this.pendingQueryTimeout)
-		void this.sendCommand('GET_STA')
-		this.pendingQueryTimeout = setTimeout(() => {
-			const received = this.pendingQueryLines.join(' | ') || this.receiveBuffer || '<no delimited response>'
-			this.pendingCellQuery = ''
-			this.pendingQueryLines = []
-			this.pendingStatusMatrix = undefined
-			this.log('warn', `Timed out waiting for GET_STA response while monitoring ${cell}; received: ${received}`)
-		}, Math.max(3000, Number(this.config.connectTimeout) || 5000))
+		// CSTAT asks for one cell directly; GET_STA returns the full status matrix.
+		// sendCommand() initializes the matching response parser and timeout.
+		void this.sendCommand(`CSTAT [${cell}]`)
 	}
 
 	private async startAlternationCell(): Promise<void> {
