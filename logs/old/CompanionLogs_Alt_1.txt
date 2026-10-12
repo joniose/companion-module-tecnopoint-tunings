@@ -1,0 +1,46 @@
+26.10.10 16:03:58 Instance/Modules: Attempting to reload module in: C:\Users\jonat\Downloads\companion-module-tecnopoint-tunings-1.0.0\companion-module-tecnopoint-tunings-1.0.0
+26.10.10 16:03:58 Instance/Modules: Found new connection module tecnopoint-tunings@1.0.0 in: C:\Users\jonat\Downloads\companion-module-tecnopoint-tunings-1.0.0\companion-module-tecnopoint-tunings-1.0.0
+26.10.10 16:03:58 Instance/ProcessManager: Starting instance: TuningS
+26.10.10 16:03:58 Instance/Controller: Reloading 1 instances: TuningS
+26.10.10 16:03:58 Instance/Child/TuningS: Process stopped
+26.10.10 16:03:58 Instance/ProcessManager: Instance "TuningS" command: ["C:\\Program Files\\Companion 5.1\\resources\\node-runtimes\\node26\\node.exe","--use-system-ca","--no-warnings=SecurityWarning","--permission","--allow-fs-read=C:\\Users\\jonat\\Downloads\\companion-module-tecnopoint-tunings-1.0.0\\companion-module-tecnopoint-tunings-1.0.0","--allow-fs-read=C:\\Program Files\\Companion 5.1\\resources","--allow-net","--enable-source-maps","C:\\Program Files\\Companion 5.1\\resources\\ConnectionThread.js"]
+26.10.10 16:03:58 Instance/Child/TuningS: Process started process 15184
+26.10.10 16:03:58 Instance/ProcessManager: Registered module client "TuningS"
+26.10.10 16:03:58 Instance/Connection/TuningS/Entrypoint: Module-host accepted registration
+26.10.10 16:03:58 Instance/Connection/TuningS/Entrypoint: Found module entrypoint, with 0 upgrade scripts
+26.10.10 16:03:58 Instance/Connection/TuningS/Entrypoint: Module initialized successfully
+26.10.10 16:03:58 Instance/Controller: instance "TuningS" configuration updated
+26.10.10 16:03:58 Instance/Connection/TuningS: Connected to TuningS at 192.168.98.250:22222
+26.10.10 16:04:04 Variables/ExpressionStream: Client "JnjplAgZ39HI2m5gS0mYf" unsubscribed from session: bank:sT1IPqgEaIZIGfE9CpmIL::20000::undefined::expression::
+26.10.10 16:04:04 Variables/ExpressionStream: Session "bank:sT1IPqgEaIZIGfE9CpmIL::20000::undefined::expression::" has no more clients, terminated
+26.10.10 16:06:05 Instance/Controller: Disable instance TuningS
+26.10.10 16:06:05 Instance/ProcessManager: Stopping instance: "TuningS"
+26.10.10 16:06:05 Instance/Child/TuningS: Process stopped
+26.10.10 16:06:06 Instance/Controller: Enable instance TuningS
+26.10.10 16:06:06 Instance/ProcessManager: Starting instance: TuningS
+26.10.10 16:06:06 Instance/ProcessManager: Instance "TuningS" command: ["C:\\Program Files\\Companion 5.1\\resources\\node-runtimes\\node26\\node.exe","--use-system-ca","--no-warnings=SecurityWarning","--permission","--allow-fs-read=C:\\Users\\jonat\\Downloads\\companion-module-tecnopoint-tunings-1.0.0\\companion-module-tecnopoint-tunings-1.0.0","--allow-fs-read=C:\\Program Files\\Companion 5.1\\resources","--allow-net","--enable-source-maps","C:\\Program Files\\Companion 5.1\\resources\\ConnectionThread.js"]
+26.10.10 16:06:06 Instance/Child/TuningS: Process started process 59016
+26.10.10 16:06:06 Instance/ProcessManager: Registered module client "TuningS"
+26.10.10 16:06:06 Instance/Connection/TuningS/Entrypoint: Module-host accepted registration
+26.10.10 16:06:06 Instance/Connection/TuningS/Entrypoint: Found module entrypoint, with 0 upgrade scripts
+26.10.10 16:06:06 Instance/Connection/TuningS/Entrypoint: Module initialized successfully
+26.10.10 16:06:06 Instance/Controller: instance "TuningS" configuration updated
+26.10.10 16:06:06 Instance/Connection/TuningS: Connected to TuningS at 192.168.98.250:22222
+26.10.10 16:06:12 Instance/Connection/TuningS: Automatic alternation enabled: A1 ↔ E1, polling every 500 ms
+26.10.10 16:06:17 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:06:22 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:06:27 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:06:32 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:06:37 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:06:42 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:06:47 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:06:52 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:06:57 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:07:02 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:07:07 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:07:12 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:07:17 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:07:22 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:07:27 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:07:32 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1
+26.10.10 16:07:37 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1

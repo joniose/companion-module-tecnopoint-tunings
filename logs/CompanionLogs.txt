@@ -1,0 +1,14 @@
+26.10.10 16:57:15 Instance/Controller: Enable instance TuningS
+26.10.10 16:57:15 Instance/ProcessManager: Starting instance: TuningS
+26.10.10 16:57:15 Instance/ProcessManager: Instance "TuningS" command: ["C:\\Program Files\\Companion 5.1\\resources\\node-runtimes\\node26\\node.exe","--use-system-ca","--no-warnings=SecurityWarning","--permission","--allow-fs-read=C:\\Users\\jonat\\Downloads\\companion-module-tecnopoint-tunings-1.0.0\\companion-module-tecnopoint-tunings-1.0.0","--allow-fs-read=C:\\Program Files\\Companion 5.1\\resources","--allow-net","--enable-source-maps","C:\\Program Files\\Companion 5.1\\resources\\ConnectionThread.js"]
+26.10.10 16:57:15 Instance/Child/TuningS: Process started process 59660
+26.10.10 16:57:15 Instance/ProcessManager: Registered module client "TuningS"
+26.10.10 16:57:15 Instance/Connection/TuningS/Entrypoint: Module-host accepted registration
+26.10.10 16:57:15 Instance/Connection/TuningS/Entrypoint: Found module entrypoint, with 0 upgrade scripts
+26.10.10 16:57:15 Instance/Connection/TuningS/Entrypoint: Module initialized successfully
+26.10.10 16:57:15 Instance/Controller: instance "TuningS" configuration updated
+26.10.10 16:57:15 Instance/Connection/TuningS: Connected to TuningS at 192.168.98.250:22222
+26.10.10 16:57:42 Instance/Connection/TuningS: Automatic alternation enabled: A1 ↔ E1, polling every 500 ms
+26.10.10 16:57:47 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1; received: HTTP/1.0 200 OKHTTP/1.0 200 OK
+26.10.10 16:57:52 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1; received: HTTP/1.0 200 OKHTTP/1.0 200 OK
+26.10.10 16:57:57 Instance/Connection/TuningS: Timed out waiting for GET_STA response while monitoring A1; received: HTTP/1.0 200 OKHTTP/1.0 200 OK
