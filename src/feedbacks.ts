@@ -27,9 +27,12 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 					],
 				},
 			],
-			callback: (feedback) =>
-				String(self.getVariableValue('last_cell') ?? '').toUpperCase() === String(feedback.options.cell).trim().toUpperCase() &&
-				String(self.getVariableValue('cell_status') ?? '') === String(feedback.options.status),
+			callback: (feedback) => {
+				return (
+					String(self.getVariableValue('last_cell') ?? '').toUpperCase() === String(feedback.options.cell).trim().toUpperCase() &&
+					String(self.getVariableValue('cell_status') ?? '') === String(feedback.options.status)
+				)
+			},
 		},
 		alternation_active: {
 			name: 'Automatic cell alternation is active',
