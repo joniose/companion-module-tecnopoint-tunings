@@ -14,7 +14,10 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 			options: [
 				{ id: 'cell', type: 'textinput', label: 'Cell coordinate', default: 'A1' },
 				{
-					id: 'status', type: 'dropdown', label: 'Status', default: '2',
+					id: 'status',
+					type: 'dropdown',
+					label: 'Status',
+					default: '2',
 					choices: [
 						{ id: '0', label: 'No sequence' },
 						{ id: '1', label: 'Stopped' },
