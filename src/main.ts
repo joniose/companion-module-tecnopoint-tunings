@@ -29,7 +29,14 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	private pendingStatusMatrix?: { columns: number; rows: number; lines: string[] }
 	private pendingQueryTimeout?: ReturnType<typeof setTimeout>
 	private alternationPollTimer?: ReturnType<typeof setTimeout>
-	private alternation?: { cellA: string; cellB: string; activeCell: string; pollInterval: number; sawRunning: boolean; started: boolean }
+	private alternation?: {
+		cellA: string
+		cellB: string
+		activeCell: string
+		pollInterval: number
+		sawRunning: boolean
+		started: boolean
+	}
 
 	constructor(internal: unknown) {
 		super(internal)
@@ -178,13 +185,19 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 			this.pendingStatusMatrix = undefined
 			this.setVariableValues({ last_cell: this.pendingCellQuery, cell_status: '' })
 			if (this.pendingQueryTimeout) clearTimeout(this.pendingQueryTimeout)
-			this.pendingQueryTimeout = setTimeout(() => {
-				const received = this.pendingQueryLines.join(' | ') || this.receiveBuffer || '<no delimited response>'
-				this.pendingCellQuery = ''
-				this.pendingQueryLines = []
-				this.pendingStatusMatrix = undefined
-				this.log('warn', `Timed out waiting for CSTAT response for ${cellQuery[1].toUpperCase()}; received: ${received}`)
-			}, Math.max(3000, Number(this.config.connectTimeout) || 5000))
+			this.pendingQueryTimeout = setTimeout(
+				() => {
+					const received = this.pendingQueryLines.join(' | ') || this.receiveBuffer || '<no delimited response>'
+					this.pendingCellQuery = ''
+					this.pendingQueryLines = []
+					this.pendingStatusMatrix = undefined
+					this.log(
+						'warn',
+						`Timed out waiting for CSTAT response for ${cellQuery[1].toUpperCase()}; received: ${received}`,
+					)
+				},
+				Math.max(3000, Number(this.config.connectTimeout) || 5000),
+			)
 		}
 		this.log('debug', `Sent: ${command}`)
 		return true
@@ -230,7 +243,10 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	private scheduleAlternationPoll(delay?: number): void {
 		if (this.alternationPollTimer) clearTimeout(this.alternationPollTimer)
 		if (!this.alternation) return
-		this.alternationPollTimer = setTimeout(() => this.pollAlternationStatus(), delay ?? this.alternation?.pollInterval ?? 1000)
+		this.alternationPollTimer = setTimeout(
+			() => this.pollAlternationStatus(),
+			delay ?? this.alternation?.pollInterval ?? 1000,
+		)
 	}
 
 	private pollAlternationStatus(): void {

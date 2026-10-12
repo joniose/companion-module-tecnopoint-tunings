@@ -664,6 +664,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"companion-module-tecnopoint-tunings@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "companion-module-tecnopoint-tunings@workspace:."
+  dependencies:
+    "@companion-module/base": "npm:~2.1.3"
+    "@companion-module/tools": "npm:^3.1.1"
+    "@types/node": "npm:^26.6.4"
+    eslint: "npm:^10.12.0"
+    husky: "npm:^9.1.7"
+    lint-staged: "npm:^17.6.0"
+    prettier: "npm:^3.9.9"
+    rimraf: "npm:^6.1.3"
+    typescript: "npm:~6.0.3"
+    typescript-eslint: "npm:^8.71.0"
+  languageName: unknown
+  linkType: soft
+
 "cross-spawn@npm:^7.0.6":
   version: 7.0.6
   resolution: "cross-spawn@npm:7.0.6"
@@ -1715,23 +1732,6 @@ __metadata:
   checksum: 10c0/36d4793e9cf7060f9da543baf67c55e354f4862c8d3d34de1a1b1d7c382d44171315cc54abf84d8900b8113d742b830108a1434f4898fb244f9b7e8426d4b8f5
   languageName: node
   linkType: hard
-
-"your-module-name@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "your-module-name@workspace:."
-  dependencies:
-    "@companion-module/base": "npm:~2.1.3"
-    "@companion-module/tools": "npm:^3.1.1"
-    "@types/node": "npm:^26.6.4"
-    eslint: "npm:^10.12.0"
-    husky: "npm:^9.1.7"
-    lint-staged: "npm:^17.6.0"
-    prettier: "npm:^3.9.9"
-    rimraf: "npm:^6.1.3"
-    typescript: "npm:~6.0.3"
-    typescript-eslint: "npm:^8.71.0"
-  languageName: unknown
-  linkType: soft
 
 "zx@npm:^8.8.5":
   version: 8.8.5

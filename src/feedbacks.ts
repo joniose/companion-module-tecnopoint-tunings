@@ -14,7 +14,10 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 			options: [
 				{ id: 'cell', type: 'textinput', label: 'Cell coordinate', default: 'A1' },
 				{
-					id: 'status', type: 'dropdown', label: 'Status', default: '2',
+					id: 'status',
+					type: 'dropdown',
+					label: 'Status',
+					default: '2',
 					choices: [
 						{ id: '0', label: 'No sequence' },
 						{ id: '1', label: 'Stopped' },
@@ -24,9 +27,12 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 					],
 				},
 			],
-			callback: (feedback) =>
-				String(self.getVariableValue('last_cell') ?? '').toUpperCase() === String(feedback.options.cell).trim().toUpperCase() &&
-				String(self.getVariableValue('cell_status') ?? '') === String(feedback.options.status),
+			callback: (feedback) => {
+				const lastCell = String(self.getVariableValue('last_cell') ?? '').toUpperCase()
+				const cell = String(feedback.options.cell).trim().toUpperCase()
+				const status = String(self.getVariableValue('cell_status') ?? '')
+				return lastCell === cell && status === String(feedback.options.status)
+			},
 		},
 		alternation_active: {
 			name: 'Automatic cell alternation is active',
