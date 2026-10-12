@@ -11,7 +11,8 @@ export function UpdatePresets(self: ModuleInstance): void {
 			name: `${command} cell A1`,
 			style: {
 				text: `${command}\n[A1]`, size: 'auto', color: 0xffffff,
-				bgcolor: command === 'START' ? 0x207020 : command === 'STOP' ? 0x992222 : command === 'CUT' ? 0xbb6600 : 0x225588,
+				bgcolor:
+					command === 'START' ? 0x207020 : command === 'STOP' ? 0x992222 : command === 'CUT' ? 0xbb6600 : 0x225588,
 				show_topbar: true,
 			},
 			steps: [{ down: [{ actionId: 'sequence_command', options: { command, cell: 'A1' } }], up: [] }],
@@ -23,7 +24,12 @@ export function UpdatePresets(self: ModuleInstance): void {
 		presets[`group_${command.toLowerCase()}`] = {
 			type: 'simple', name: `${command} group 1`,
 			style: { text: `${command}\nGRP1`, size: 'auto', color: 0xffffff, bgcolor: command === 'START' ? 0x207020 : command === 'STOP' ? 0x992222 : 0xbb6600, show_topbar: true },
-			steps: [{ down: [{ actionId: 'group_command', options: { command, group: 1 } }], up: [] }],
+			steps: [
+				{
+					down: [{ actionId: 'group_command', options: { command, group: 1 } }],
+					up: [],
+				},
+			],
 			feedbacks: [],
 		}
 	}
@@ -38,7 +44,8 @@ export function UpdatePresets(self: ModuleInstance): void {
 	] as const
 	for (const [command, label] of globals) {
 		presets[`global_${command.toLowerCase()}`] = {
-			type: 'simple', name: label,
+			type: 'simple',
+			name: label,
 			style: {
 				text: label,
 				size: 'auto',
@@ -56,7 +63,9 @@ export function UpdatePresets(self: ModuleInstance): void {
 		style: { text: 'AUTO\nA1 ↔ B1', size: 'auto', color: 0xffffff, bgcolor: 0x444444, show_topbar: true },
 		steps: [
 			{
-				down: [{ actionId: 'toggle_alternation', options: { cellA: 'A1', cellB: 'B1', firstCell: 'X', pollInterval: 1000 } }],
+				down: [
+					{ actionId: 'toggle_alternation', options: { cellA: 'A1', cellB: 'B1', firstCell: 'X', pollInterval: 1000 } },
+				],
 				up: [],
 			},
 		],
